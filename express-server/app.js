@@ -9,6 +9,7 @@ import bb from 'express-busboy';
 
 // import routes
 import todoRoutes from './routes/todo.server.route';
+import deviceRoutes from './routes/device.server.route';
 
 // define our app using express
 const app = express();
@@ -44,6 +45,7 @@ mongoose.connect('mongodb://localhost/mern-todo-app', {
 SourceMapSupport.install();
 
 app.use('/api', todoRoutes);
+app.use('/device', deviceRoutes);
 
 app.get('/', (req,res) => {
   return res.end('Api working');

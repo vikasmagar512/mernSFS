@@ -1,0 +1,15 @@
+.navbar.black{
+    background-color: #000000!important;
+}
+.navLogo{
+    height: 35px;
+    width: 94px;
+    margin-right: 8px;
+    margin-top: -5px;
+}
+.green{
+    color: green;
+}
+.red{
+    color: red;
+}
