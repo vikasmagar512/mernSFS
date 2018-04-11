@@ -1,4 +1,5 @@
 // ./express-server/routes/todo.server.route.js
+/*
 import express from 'express';
 
 //import controller file
@@ -18,3 +19,4 @@ router.route('/:id')
 
 
 export default router;
+*/

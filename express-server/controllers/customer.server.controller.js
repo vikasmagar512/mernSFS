@@ -2,32 +2,48 @@
 import mongoose from 'mongoose';
 
 //import models
-import Device from '../models/device.server.model';
+import Customer from '../models/customer.server.model';
 
-export const getDevices = (req,res) => {
-    Device.find().exec((err,todos) => {
+export const getCustomers= (req,res) => {
+    Customer.find().exec((err,customers) => {
+    console.log(`customer ${customers}`)
     if(err){
-    return res.json({'success':false,'message':'Some Error'});
+        return res.json({'success':false,'message':'Some Error'});
     }
-
-    return res.json({'success':true,'message':'Devices fetched successfully',todos});
+    return res.json({'success':true,'message':'Customer fetched successfully',customers});
   });
 }
-export const getDevice = (req,res) => {
-  Todo.find({_id:req.params.id}).exec((err,todo) => {
+
+/*export const getCustomer = (req,res) => {
+    Customer.find({_id:req.params.id}).exec((err,todo) => {
     if(err){
     return res.json({'success':false,'message':'Some Error'});
     }
     if(todo.length){
-      return res.json({'success':true,'message':'Todo fetched by id successfully',todo});
+      return res.json({'success':true,'message':'Customer fetched by id successfully',todo});
     }
     else{
-      return res.json({'success':false,'message':'Todo with the given id not found'});
+      return res.json({'success':false,'message':'Customer with the given id not found'});
     }
   })
+}*/
+export const getCustomerByCustomerNo = (req,res) => {
+    console.log(`req.params ${req.params.id}`)
+    Customer.find({customer_number:req.params.id}).exec((err,customer) => {
+        console.log(`customer ${customer}`)
+        if(err){
+            return res.json({'success':false,'message':'Some Error'});
+        }
+        if(customer.length){
+          return res.json({'success':true,'message':'Customer fetched by id successfully',customer});
+        }
+        else{
+          return res.json({'success':false,'message':'Customer with the given id not found'});
+        }
+    })
 }
-/*
 
+/*
 export const deleteTodo = (req,res) => {
   Todo.findByIdAndRemove(req.params.id, (err,todo) => {
     if(err){

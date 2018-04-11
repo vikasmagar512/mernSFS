@@ -9,4 +9,5 @@ var Schema = mongoose.Schema({
   todoDesc: String
 });
 
+// export default mongoose.model('Todo', Schema,'DATABASE Collection Name');
 export default mongoose.model('Todo', Schema);

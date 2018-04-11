@@ -2,18 +2,21 @@
 import express from 'express';
 
 //import controller file
-import * as deviceController from '../controllers/device.server.controller';
+import * as AgreementController from '../controllers/agreement.server.controller';
 
 // get an instance of express router
 const router = express.Router();
 
 router.route('/')
-     .get(deviceController.getDevices)
+     .get(AgreementController.getAgreements)
      // .post(deviceController.addTodo)
      // .put(deviceController.updateTodo);
-
+/*
 router.route('/:id')
-      .get(deviceController.getDevice)
+      .get(AgreementController.getAgreement)
+      // .delete(deviceController.deleteTodo);*/
+router.route('/agreementNo/:id')
+      .get(AgreementController.getAgreementByAgreementNo)
       // .delete(deviceController.deleteTodo);
 
 
