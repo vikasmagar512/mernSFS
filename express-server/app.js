@@ -10,6 +10,7 @@ import bb from 'express-busboy';
 // import routes
 // import todoRoutes from './routes/todo.server.route';
 import assetRoutes from './routes/asset.server.route';
+import accessoriesRoutesRoutes from './routes/accessory.server.route';
 import agreementRoutes from './routes/agreement.server.route';
 import rentalRoutesRoutes from './routes/rental.server.route';
 import customerRoutesRoutes from './routes/customer.server.route';
@@ -17,7 +18,7 @@ import vendorRoutesRoutes from './routes/vendor.server.route';
 import stockDetailsRoutesRoutes from './routes/stockDetail.server.route';
 import orderDetailsRoutesRoutes from './routes/orderDetail.server.route';
 import quotationDetailsRoutesRoutes from './routes/quotationDetail.server.route';
-import accessoriesRoutesRoutes from './routes/accessory.server.route';
+import equipmentsRoutesRoutes from './routes/equipment.server.route';
 
 // define our app using express
 const app = express();
@@ -63,6 +64,7 @@ app.use('/stockDetails', stockDetailsRoutesRoutes);
 app.use('/orderDetails', orderDetailsRoutesRoutes);
 app.use('/accessories', accessoriesRoutesRoutes);
 app.use('/quotations', quotationDetailsRoutesRoutes);
+app.use('/equipments', equipmentsRoutesRoutes);
 
 app.get('/', (req,res) => {
   return res.end('Api working');
