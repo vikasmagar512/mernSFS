@@ -12,10 +12,6 @@ router.route('/')
     .get(CustomerController.getCustomers)
 // .post(CustomerController.addTodo)
 // .put(CustomerController.updateTodo);
-/*
-router.route('/:id')
-      .get(CustomerController.getAgreement)
-      // .delete(CustomerController.deleteTodo);*/
 router.route('/customerNo/:id')
     .get(CustomerController.getCustomerByCustomerNo)
     // .delete(CustomerController.deleteTodo);
