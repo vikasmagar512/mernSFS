@@ -28,13 +28,13 @@ export const getAgreements = (req,res) => {
 }*/
 export const getAgreementByAgreementNo = (req,res) => {
     console.log(`req.params ${req.params.id}`)
-    Agreement.find({agreement_number:req.params.id}).exec((err,agreements) => {
-        console.log(`agreements ${agreements}`)
+    Agreement.find({agreement_number:req.params.id}).exec((err,agreement) => {
+        console.log(`agreements ${agreement}`)
         if(err){
             return res.json({'success':false,'message':'Some Error'});
         }
-        if(agreements.length){
-          return res.json({'success':true,'message':'Agreement fetched by id successfully',agreements});
+        if(agreement.length){
+          return res.json({'success':true,'message':'Agreement fetched by id successfully',agreement});
         }
         else{
           return res.json({'success':false,'message':'Agreement with the given id not found'});

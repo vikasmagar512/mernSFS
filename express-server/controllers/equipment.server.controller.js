@@ -26,12 +26,12 @@ export const getEquipment= (req,res) => {
   })
 }
 export const getEquipmentByAssetId= (req,res) => {
-    Equipment.find({asset_id:req.params.id}).exec((err,todo) => {
+    Equipment.find({asset_id:req.params.id}).exec((err,equipments) => {
     if(err){
     return res.json({'success':false,'message':'Some Error'});
     }
-    if(todo.length){
-      return res.json({'success':true,'message':'Equipment fetched by asset_id successfully',todo});
+    if(equipments.length){
+      return res.json({'success':true,'message':'Equipment fetched by asset_id successfully',equipments});
     }
     else{
       return res.json({'success':false,'message':'Equipment with the given asset_id not found'});

@@ -27,12 +27,12 @@ export const getAsset= (req,res) => {
   })
 }
 export const getAssetByAssetId= (req,res) => {
-    Asset.find({asset_id:req.params.id}).exec((err,todo) => {
+    Asset.find({asset_id:req.params.id}).exec((err,assets) => {
     if(err){
     return res.json({'success':false,'message':'Some Error'});
     }
-    if(todo.length){
-      return res.json({'success':true,'message':'Asset fetched by asset_id successfully',todo});
+    if(assets.length){
+      return res.json({'success':true,'message':'Asset fetched by asset_id successfully',assets});
     }
     else{
       return res.json({'success':false,'message':'Asset with the given asset_id not found'});
