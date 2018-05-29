@@ -15,7 +15,7 @@ var Schema = mongoose.Schema({
     lease_end_date : String,
     primary_arrears : Number,
     last_due_date : Number,
-    financed_amount : Number,
+    financed_amount : String,
     residual_amount : Number,
     early_settlement_amount : Number,
     upgrade_amount : Number,

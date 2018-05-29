@@ -29,13 +29,13 @@ export const getCustomers= (req,res) => {
 }*/
 export const getCustomerByCustomerNo = (req,res) => {
     console.log(`req.params ${req.params.id}`)
-    Customer.find({customer_number:req.params.id}).exec((err,customer) => {
-        console.log(`customer ${customer}`)
+    Customer.find({customer_number:req.params.id}).exec((err,customers) => {
+        console.log(`customer ${customers}`)
         if(err){
             return res.json({'success':false,'message':'Some Error'});
         }
         if(customer.length){
-          return res.json({'success':true,'message':'Customer fetched by id successfully',customer});
+          return res.json({'success':true,'message':'Customer fetched by id successfully',customers});
         }
         else{
           return res.json({'success':false,'message':'Customer with the given id not found'});

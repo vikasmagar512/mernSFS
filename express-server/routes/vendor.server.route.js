@@ -17,5 +17,4 @@ router.route('/vendorNo/:id')
     // .delete(VendorController.deleteTodo);
 
     // .get(VendorController.getCustomers)
-
 export default router;
